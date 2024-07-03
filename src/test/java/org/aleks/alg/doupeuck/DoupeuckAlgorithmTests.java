@@ -1,11 +1,11 @@
 package org.aleks.alg.doupeuck;
 
-import static org.aleks.alg.doupeuck.service.DpAlgorithm.douglasPeucker;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
 import org.aleks.alg.doupeuck.model.Point;
+import org.aleks.alg.doupeuck.service.CurvePointsReducer;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -46,6 +46,8 @@ public class DoupeuckAlgorithmTests {
   @Test
   public void test() {
 
+    CurvePointsReducer dpalg = new CurvePointsReducer();
+
     List<Point> points = List.of(
         new Point(0, 0),
         new Point(1, 1),
@@ -56,7 +58,7 @@ public class DoupeuckAlgorithmTests {
     );
 
     double epsilon = 1.0;
-    var simplified = douglasPeucker(points, epsilon);
+    var simplified = dpalg.douglasPeucker(points, epsilon);
     assertEquals(3, simplified.size(),
         "Reduction didn't produce expected number of points.");
   }

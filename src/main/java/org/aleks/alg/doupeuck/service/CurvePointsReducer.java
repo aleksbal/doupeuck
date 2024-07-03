@@ -5,10 +5,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
 import org.aleks.alg.doupeuck.model.Point;
+import org.springframework.stereotype.Service;
 
-public class DpAlgorithm {
+@Service
+public class CurvePointsReducer {
 
-  public static List<Point> douglasPeucker(List<Point> points, double epsilon) {
+  public List<Point> douglasPeucker(List<Point> points, double epsilon) {
     if (points.size() <= 2) {
       return points;
     }
@@ -40,7 +42,7 @@ public class DpAlgorithm {
     }
   }
 
-  private static double perpendicularDistance(Point point, Point lineStart, Point lineEnd) {
+  private double perpendicularDistance(Point point, Point lineStart, Point lineEnd) {
     double dx = lineEnd.x() - lineStart.x();
     double dy = lineEnd.y() - lineStart.y();
 
