@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
 import org.aleks.alg.doupeuck.model.Point;
-import org.aleks.alg.doupeuck.service.CurvePointsReducer;
+import org.aleks.alg.doupeuck.service.LineSimplifier;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -46,7 +46,7 @@ public class DoupeuckAlgorithmTests {
   @Test
   public void test() {
 
-    CurvePointsReducer dpalg = new CurvePointsReducer();
+    LineSimplifier dpalg = new LineSimplifier();
 
     List<Point> points = List.of(
         new Point(0, 0),

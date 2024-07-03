@@ -8,7 +8,7 @@ import org.aleks.alg.doupeuck.model.Point;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CurvePointsReducer {
+public class LineSimplifier {
 
   public List<Point> douglasPeucker(List<Point> points, double epsilon) {
     if (points.size() <= 2) {

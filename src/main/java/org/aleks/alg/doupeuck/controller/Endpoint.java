@@ -3,7 +3,7 @@ package org.aleks.alg.doupeuck.controller;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import org.aleks.alg.doupeuck.model.Point;
-import org.aleks.alg.doupeuck.service.CurvePointsReducer;
+import org.aleks.alg.doupeuck.service.LineSimplifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
@@ -22,7 +22,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Component
 public class Endpoint {
   @Autowired
-  CurvePointsReducer service;
+  LineSimplifier service;
   @Bean
   public RouterFunction<ServerResponse> getPointsRoute() {
     return route(GET("/points"), this::getPointsHandler);
