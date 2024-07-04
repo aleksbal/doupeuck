@@ -1,0 +1,1 @@
+Douglas-Peucker algorithm implementations as a GraalVM Native compiled REST Service based on Java 21, Spring Boot, and Webflux stack. The Douglas-Peucker algorithm is a line filtering algorithm, which filters the points of the polygon to only retain the most important ones to preserve the shape of the polygon.
